@@ -5,8 +5,8 @@
 static const char* kPublicUrl = "https://btc-e.com/api/2/";
 
 static const char* kTradeUrl = "https://btc-e.com/tapi";
-const static char* kKey = "Y0urKeY";
-const static char* kSecret = "Y0urSecReT";
+static const char* kKey = "Y0urKeY";
+static const char* kSecret = "Y0urSecReT";
 
 int main(int argc, char** argv) {
     btc::Api::Init();
