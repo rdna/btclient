@@ -1,7 +1,8 @@
 BTClient
 ========
 
-This is C++ implementation for BTC-E.com API.
+This is C++ implementation for
+[BTC-E.com API](https://btc-e.com/api/documentation).
 
 Dependencies
 ============
