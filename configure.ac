@@ -1,7 +1,7 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.69])
+AC_PREREQ([2.68])
 AC_INIT([btclient], [0.0.1], [rdna@rdna.ru])
 AC_CONFIG_SRCDIR([src/btclient.cc])
 AM_INIT_AUTOMAKE
@@ -29,7 +29,6 @@ AC_CHECK_HEADERS([err.h])
 AC_CHECK_HEADERS([unistd.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
-AC_CHECK_HEADER_STDBOOL
 AC_C_INLINE
 AC_TYPE_SIZE_T
 
