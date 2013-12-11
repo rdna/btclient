@@ -3,19 +3,18 @@
 #include "crypto.h"
 #include "http.h"
 #include "json.h"
+#include "params.h"
 
 #include <ctime>
-#include <string>
 #include <sstream>
+#include <string>
 
 namespace btc {
 
+typedef std::vector<ParamInterfase*> ParamsVector;
+
 class Api {
 public:
-    struct MethodParams {
-        // TODO(rdna@): Support params for all the methods.
-    };
-
     explicit Api(const std::string url)
         : url_(url)
     { }
@@ -37,7 +36,7 @@ public:
     }
 
     void SendRequest(const std::string type);
-    void SendRequest(const std::string method, const MethodParams params);
+    void SendRequest(const std::string method, const ParamsVector& params);
     void HandleAnswer();
 
 private:

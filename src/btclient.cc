@@ -9,9 +9,12 @@ void Api::SendRequest(const std::string type) {
     http_client_.Send(url_ + type);
 }
 
-void Api::SendRequest(const std::string method, const MethodParams /*params*/) {
-    // TODO(rdna@): Support params.
+void Api::SendRequest(const std::string method, const ParamsVector& params) {
     std::string post_fields = "nonce=" + GetNonce() + "&method=" + method;
+    for (ParamsVector::const_iterator param_it = params.begin();
+            param_it != params.end(); ++param_it) {
+        post_fields.append("&" + (*param_it)->Get());
+    }
     std::string signed_post_fields = hmac_.Compute(secret_, post_fields);
 
     http_client_.AddHeader("Key: " + key_);
