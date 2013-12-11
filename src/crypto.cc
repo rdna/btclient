@@ -29,7 +29,7 @@ std::string Hmac::Compute(const std::string key, const std::string message) {
     }
     std::string result;
     char convert_buffer[CONVERT_BUFFER_LEN];
-    for (int i = 0; i < message_digest_len; ++i) {
+    for (size_t i = 0; i < message_digest_len; ++i) {
         snprintf(convert_buffer, CONVERT_BUFFER_LEN, "%02hhx",
                  *(message_digest + i));
         result.append(convert_buffer);
