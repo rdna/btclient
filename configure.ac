@@ -16,12 +16,10 @@ AC_CHECK_LIB([curl], [curl_easy_setopt])
 
 # Checks for C++ libraries.
 AC_LANG_PUSH([C++])
-SAVED_LDFLAGS=$LDFLAGS
-LDFLAGS="$LDFLAGS -ljsoncpp"
+LIBS="$LIBS -ljsoncpp"
 AC_LINK_IFELSE(	[AC_LANG_PROGRAM([#include <json/json.h>], [Json::Value root])],
-		[LIBS="$LIBS -ljsoncpp"] [HAVE_JSONCPP=1],
+		[HAVE_JSONCPP=1],
 		[AC_MSG_ERROR([libjsoncpp is not installed.])])
-LDFLAGS=$SAVED_LDFLAGS
 AC_LANG_POP([C++])
 
 # Checks for header files.
