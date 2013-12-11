@@ -15,7 +15,7 @@ void Api::SendRequest(const std::string method, const ParamsVector& params) {
             param_it != params.end(); ++param_it) {
         post_fields.append("&" + (*param_it)->Get());
     }
-    std::string signed_post_fields = hmac_.Compute(secret_, post_fields);
+    const std::string signed_post_fields = hmac_.Compute(secret_, post_fields);
 
     http_client_.AddHeader("Key: " + key_);
     http_client_.AddHeader("Sign: " + signed_post_fields);
