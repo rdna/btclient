@@ -22,4 +22,29 @@ private:
     Json::Reader reader_;
 };
 
+class Config : public Data {
+public:
+    Config() { }
+
+    inline std::string GetKeyAsString(const std::string key) const {
+        return root()[key].asString();
+    }
+
+    inline std::string key() const {
+        return GetKeyAsString("key");
+    }
+
+    inline std::string secret() const {
+        return GetKeyAsString("secret");
+    }
+
+    inline std::string public_api_url() const {
+        return GetKeyAsString("public_api_url");
+    }
+
+    inline std::string trade_api_url() const {
+        return GetKeyAsString("trade_api_url");
+    }
+};
+
 }   // namespace json

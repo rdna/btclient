@@ -1,8 +1,10 @@
 #pragma once
 
+#include "config.h"
 #include "crypto.h"
 #include "http.h"
 #include "json.h"
+#include "options.h"
 #include "params.h"
 
 #include <ctime>

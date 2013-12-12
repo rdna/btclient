@@ -2,17 +2,17 @@
 
 #include <unistd.h>
 
-static const char* kPublicUrl = "https://btc-e.com/api/2/";
-
-static const char* kTradeUrl = "https://btc-e.com/tapi";
-static const char* kKey = "Y0urKeY";
-static const char* kSecret = "Y0urSecReT";
-
 int main(int argc, char** argv) {
+    btc::Options options(argc, argv);
+    options.Parse();
+
+    btc::Config config(options.config_file());
+    config.Parse();
+
     btc::Api::Init();
 
-    btc::Api public_api(kPublicUrl);
-    btc::Api trade_api(kTradeUrl, kKey, kSecret);
+    btc::Api public_api(config.public_api_url());
+    btc::Api trade_api(config.trade_api_url(), config.key(), config.secret());
 
     btc::ParamsVector trans_history_params;
     btc::Param<int> from("from", 0);
