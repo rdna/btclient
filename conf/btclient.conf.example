@@ -1,4 +1,5 @@
-// BTClient config file
+// BTClient config file.
+// Format: http://www.json.org
 {
     // API URLs.
     "public_api_url": "https://btc-e.com/api/2/",
