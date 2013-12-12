@@ -1,0 +1,10 @@
+// BTClient config file
+{
+    // API URLs.
+    "public_api_url": "https://btc-e.com/api/2/",
+    "trade_api_url":  "https://btc-e.com/tapi",
+
+    // Substutute your keys here.
+    "key": "Y0urKey",
+    "secret": "Y0urSeCReT"
+}
