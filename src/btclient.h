@@ -54,7 +54,7 @@ private:
     std::string method_;
     crypto::Hmac hmac_;
 
-    json::Answer answer_;
+    json::Data answer_;
 };
 
 }   // namespace btc

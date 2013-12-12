@@ -6,11 +6,12 @@
 
 namespace json {
 
-class Answer {
+class Data {
 public:
-    Answer() { }
+    Data() { }
+    virtual ~Data() { }
 
-    void Parse(const std::string data);
+    virtual void ParseFromString(const std::string data);
 
     inline const Json::Value& root() const {
         return root_;

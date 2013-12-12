@@ -27,7 +27,7 @@ void Api::SendRequest(const std::string method, const ParamsVector& params) {
 }
 
 void Api::HandleAnswer() {
-    answer_.Parse(http_client_.answer());
+    answer_.ParseFromString(http_client_.answer());
     std::cout << answer_.root();
 }
 

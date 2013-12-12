@@ -4,7 +4,7 @@
 
 namespace json {
 
-void Answer::Parse(const std::string data) {
+void Data::ParseFromString(const std::string data) {
     if (!reader_.parse(data, root_)) {
         err(1, "libjson: Can't parse data.");
     }
