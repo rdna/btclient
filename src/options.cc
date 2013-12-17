@@ -1,5 +1,8 @@
 #include "options.h"
 
+#include <stdlib.h>
+#include <cstdio>
+
 namespace btc {
 
 void Options::Usage() const {
